@@ -3,77 +3,45 @@
 <!doctype html>
 <html lang="fr">
   <head>
-    <!-- Google Tag Manager -->
-    <script>
-      (function (w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-        var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l != "dataLayer" ? "&l=" + l : "";
-        j.async = true;
-        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-        f.parentNode.insertBefore(j, f);
-      })(window, document, "script", "dataLayer", "GTM-NSD3WXDB");
-    </script>
-    <!-- End Google Tag Manager -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
       La Maison Pilates Bko | Studio de Pilates à Baco Djicoroni ACI, Bamako
     </title>
 
-    <!-- FAVICON -->
     <link rel="icon" type="image/png" href="favicon.png" />
     <meta
       name="description"
       content="Rejoignez La Maison Pilates Bko à Baco Djicoroni ACI. Cours de Pilates Mat, débutant, intermédiaire, prénatal et senior. Séance à 10 000 F CFA ou abonnement à 60 000 F CFA. Réservez votre place dès aujourd'hui."
     />
 
-    <!-- Open Graph (SEO Socials) -->
     <meta
       property="og:title"
       content="La Maison Pilates Bko | Votre Studio Bien-être"
     />
-
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-8NCKX9G9CW"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-8NCKX9G9CW");
-    </script>
-
     <meta
       property="og:description"
       content="Prenez soin de votre corps et de votre esprit avec nos experts en Pilates à Bamako."
     />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="fr_ML" />
-    <!-- Google Site Verification -->
+
     <meta
       name="google-site-verification"
       content="Z9slJbT_Euj0O-nHHQSK-ArVZ3VTY0n0sK50r663CVY"
     />
-    <!-- Fonts -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+
     <link
       href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
       rel="stylesheet"
     />
 
-    <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css" />
 
-    <!-- Données structurées SEO -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -91,32 +59,25 @@
     </script>
   </head>
   <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript
-      ><iframe
-        src="https://www.googletagmanager.com/ns.html?id=GTM-NSD3WXDB"
-        height="0"
-        width="0"
-        style="display: none; visibility: hidden"
-      ></iframe
-    ></noscript>
-    <!-- End Google Tag Manager (noscript) -->
     <header class="main-header">
       <nav class="container">
-        <!-- LOGO EN IMAGE -->
-        <a href="#" class="logo">
-          <img
-            src="/img/logo.png"
-            alt="La Maison Pilates Bamako"
-            class="logo-img"
-          />
+        <a href="#" class="logo" aria-label="Retour à l'accueil">
+          <picture>
+            <source srcset="/img/logo.webp" type="image/webp" />
+            <img
+              src="/img/logo.png"
+              alt="La Maison Pilates Bamako"
+              class="logo-img"
+              width="175"
+              height="140"
+            />
+          </picture>
         </a>
         <a href="#contact" class="btn btn-secondary">Réserver un cours</a>
       </nav>
     </header>
 
     <main>
-      <!-- Hero Section (Split Layout) -->
       <section class="hero container">
         <div class="hero-content fade-in">
           <h1>
@@ -142,16 +103,26 @@
             </a>
           </div>
         </div>
+
         <div class="hero-image fade-in">
-          <img
-            src="img/pilates-2.jpeg"
-            alt="Séance de Pilates à La Maison Pilates Bko"
-            loading="eager"
-          />
+          <picture>
+            <source
+              media="(max-width: 600px)"
+              srcset="img/pilates-mobile.webp"
+              type="image/webp"
+            />
+            <source srcset="img/pilates.webp" type="image/webp" />
+            <img
+              src="img/pilates-2.jpeg"
+              alt="Séance de Pilates à La Maison Pilates Bko"
+              width="742"
+              height="881"
+              loading="eager"
+            />
+          </picture>
         </div>
       </section>
 
-      <!-- Services Section -->
       <section id="services" class="services-section">
         <div class="container">
           <h2 class="section-title fade-in">Nos Formules & Spécialités</h2>
@@ -224,7 +195,6 @@
         </div>
       </section>
 
-      <!-- Tarifs Section -->
       <section id="tarifs" class="pricing-section container">
         <h2 class="section-title fade-in">
           Des tarifs clairs, sans engagement
@@ -252,7 +222,6 @@
         </div>
       </section>
 
-      <!-- Contact Section -->
       <section id="contact" class="contact-section">
         <div class="container card-form-wrapper fade-in">
           <div class="form-info">
@@ -333,8 +302,52 @@
       </div>
     </footer>
 
-    <!-- Scripts (Lucide Icons + Logique) -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script src="script.js"></script>
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <script src="script.js" defer></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var gtmLoaded = false;
+        function loadGTM() {
+          if (gtmLoaded) return;
+          gtmLoaded = true;
+
+          // Script GTM
+          (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+            var f = d.getElementsByTagName(s)[0],
+              j = d.createElement(s),
+              dl = l != "dataLayer" ? "&l=" + l : "";
+            j.async = true;
+            j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+            f.parentNode.insertBefore(j, f);
+          })(window, document, "script", "dataLayer", "GTM-NSD3WXDB");
+
+          // Script Gtag
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag("js", new Date());
+          gtag("config", "G-8NCKX9G9CW");
+
+          // Retirer les écouteurs d'événements
+          ["scroll", "click", "mousemove", "touchstart"].forEach(
+            function (evt) {
+              window.removeEventListener(evt, loadGTM);
+            },
+          );
+        }
+
+        // Charger GTM à la première interaction de l'utilisateur
+        ["scroll", "click", "mousemove", "touchstart"].forEach(function (evt) {
+          window.addEventListener(evt, loadGTM, { passive: true, once: true });
+        });
+
+        // Sécurité : charger GTM après 3.5 secondes même s'il n'y a pas eu d'interaction
+        setTimeout(loadGTM, 3500);
+      });
+    </script>
   </body>
 </html>

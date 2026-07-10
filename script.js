@@ -1,73 +1,41 @@
 /** @format */
 
 document.addEventListener("DOMContentLoaded", () => {
-  // --- Initialisation des icônes Lucide ---
-  lucide.createIcons();
-
-  // --- 1. Micro-animations au défilement ---
-  const fadeElements = document.querySelectorAll(".fade-in");
-
-  const observerOptions = {
-    root: null,
-    threshold: 0.1,
-    rootMargin: "0px 0px -50px 0px",
-  };
-
-  const appearanceObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-        observer.unobserve(entry.target);
-      }
-    });
-  }, observerOptions);
-
-  fadeElements.forEach((element) => appearanceObserver.observe(element));
-
-  // --- 2. Gestion Unique via WhatsApp (Zéro Backend) ---
-  const leadForm = document.getElementById("leadForm");
-  const sendWhatsappBtn = document.getElementById("sendWhatsappBtn");
-  const formFeedback = document.getElementById("formFeedback");
-
-  // Remplacer par ton vrai numéro WhatsApp Business (ex: 22370000000)
-  const WHATSAPP_NUMBER = "22371812544";
-
-  // Fonction principale de redirection
-  function handleSubscription(e) {
-    if (e) e.preventDefault(); // Bloque le rechargement de la page si c'est le formulaire
-
-    const name = document.getElementById("name").value.trim();
-    const phone = document.getElementById("phone").value.trim();
-    const service = document.getElementById("service-select").value;
-
-    // Validation simple
-    if (!name || !phone || !service) {
-      formFeedback.style.color = "#d9534f";
-      formFeedback.textContent =
-        "⚠️ Veuillez remplir tous les champs avant de continuer.";
-      return;
-    }
-
-    formFeedback.style.color = "var(--primary-dark)";
-    formFeedback.textContent = "⚡ Redirection vers WhatsApp...";
-
-    // Formatage du message pour ton WhatsApp Business
-    const textMessage =
-      `Bonjour La Maison Pilates Bko, je souhaite m'inscrire !\n\n` +
-      `👤 *Nom :* ${name}\n` +
-      `📞 *Contact :* ${phone}\n` +
-      `🧘 *Formule choisie :* ${service}\n\n` +
-      `Merci de me recontacter pour confirmer mon premier cours !`;
-
-    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(textMessage)}`;
-
-    // Ouvre WhatsApp dans un nouvel onglet
-    window.open(whatsappUrl, "_blank");
+  const e = document.querySelectorAll(".fade-in"),
+    t = new IntersectionObserver(
+      (e, t) => {
+        e.forEach((e) => {
+          e.isIntersecting &&
+            (e.target.classList.add("visible"), t.unobserve(e.target));
+        });
+      },
+      { root: null, threshold: 0.1, rootMargin: "0px 0px -50px 0px" },
+    );
+  e.forEach((e) => t.observe(e));
+  const n = document.getElementById("leadForm"),
+    o = document.getElementById("sendWhatsappBtn"),
+    r = document.getElementById("formFeedback"),
+    c = "22371812544";
+  function a(e) {
+    e && e.preventDefault();
+    const t = document.getElementById("name").value.trim(),
+      n = document.getElementById("phone").value.trim(),
+      o = document.getElementById("service-select").value;
+    if (!t || !n || !o)
+      return (
+        (r.style.color = "#d9534f"),
+        void (r.textContent =
+          "⚠️ Veuillez remplir tous les champs avant de continuer.")
+      );
+    ((r.style.color = "var(--primary-dark)"),
+      (r.textContent = "⚡ Redirection vers WhatsApp..."));
+    const a = encodeURIComponent(
+      `Bonjour La Maison Pilates Bko, je souhaite m'inscrire !\n\n👤 *Nom* : ${t}\n📞 *Téléphone* : ${n}\n🎯 *Formule* : ${o}\n\nMerci !`,
+    );
+    window.open(`https://wa.me/${c}?text=${a}`, "_blank");
   }
-
-  // Action 1 : Clic sur le bouton principal "Envoyer l'inscription"
-  leadForm.addEventListener("submit", handleSubscription);
-
-  // Action 2 : Clic sur le bouton secondaire "S'inscrire via WhatsApp"
-  sendWhatsappBtn.addEventListener("click", handleSubscription);
+  (n.addEventListener("submit", a),
+    o.addEventListener("click", () => {
+      a(null);
+    }));
 });
