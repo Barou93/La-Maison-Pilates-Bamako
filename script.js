@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const n = document.getElementById("leadForm"),
     o = document.getElementById("sendWhatsappBtn"),
     r = document.getElementById("formFeedback"),
-    c = "22371812544";
+    c = "22394495490";
   function a(e) {
     e && e.preventDefault();
     const t = document.getElementById("name").value.trim(),
